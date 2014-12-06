@@ -1,0 +1,18 @@
+{
+  "name": "final-assignment",
+  "description": "Single Page Application Boilerplate Project",
+  "version": "0.0.0",
+  "homepage": "http://leahdevries.com",
+  "author": "Leah de Vries",
+  "main": "server.js",
+  "dependencies": {
+    "express": "*"
+  },
+  "devDependencies": {
+    "gulp": "*",
+    "gulp-sass": "*",
+    "gulp-imagemin": "*",
+    "gulp-jade": "*",
+    "gulp-rename": "*"
+  }
+}

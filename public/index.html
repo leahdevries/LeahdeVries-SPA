@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Web App Assignment</title>
+  <meta name="description" content="Hello World">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui">
+  <link rel="stylesheet" href="assets/styles/main.css" type="text/css">
+  <body></body>
+  <div class="wrapper">
+    <header class="header">
+      <h1>World Maps</h1>
+      <ul class="nav">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/more">More</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </header>
+    <div class="main"></div>
+    <footer class="footer">
+      <p>Copyright &copy; 2014</p>
+    </footer>
+  </div>
+  <!-- ------------------------------->
+  <!-- Templates-->
+  <!-- ------------------------------->
+  <script id="home" type="text/template">
+    <div class="page home">{{{content}}}</div>
+    {{#each portfolioitems}}
+    <p>{{name}}; {{image}}</p>
+    {{/each}}
+    
+    
+  </script>
+  <script id="about" type="text/template">
+    <div class="page about">{{{content}}}</div>
+    
+  </script>
+  <script id="services" type="text/template">
+    <div class="page services">{{{content}}}</div>
+    
+  </script>
+  <script id="more" type="text/template">
+    <div class="page more">{{{content}}}</div>
+    
+  </script>
+  <script id="contact" type="text/template">
+    <div class="page contact">{{{content}}}</div>
+    
+  </script>
+  <!-- ------------------------------->
+  <!-- Libraries-->
+  <!-- ------------------------------->
+  <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore.js"></script>
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone.js"></script>
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
+  <!-- ------------------------------->
+  <!-- Application-->
+  <!-- ------------------------------->
+  <script type="text/javascript" src="assets/scripts/main.js"></script>
+</html>

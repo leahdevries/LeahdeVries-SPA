@@ -1,0 +1,84 @@
+doctype html
+html
+
+  head
+
+  meta(charset="utf-8")
+
+  meta(http-equiv="X-UA-Compatible", content="IE=edge")
+
+  title Web App Assignment
+
+  meta(name="description", content="Hello World")
+
+  meta(name="viewport", content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui")
+
+  link(rel="stylesheet", href="assets/styles/main.css", type="text/css")
+
+  body
+
+  div.wrapper
+
+    header.header
+
+      h1 World Maps
+
+      ul.nav
+
+        li: a(href="/") Home
+
+        li: a(href="/about") About
+
+        li: a(href="/services") Services
+
+        li: a(href="/more") More
+
+        li: a(href="/contact") Contact
+
+    div.main
+
+    footer.footer
+
+      p Copyright &copy; 2014
+
+  // -----------------------------
+  // Templates
+  // -----------------------------
+
+  script#home(type="text/template").
+    <div class="page home">{{{content}}}</div>
+    {{#each portfolioitems}}
+    <p>{{name}}; {{image}}</p>
+    {{/each}}
+
+
+  script#about(type="text/template").
+    <div class="page about">{{{content}}}</div>
+
+  script#services(type="text/template").
+    <div class="page services">{{{content}}}</div>
+
+  script#more(type="text/template").
+    <div class="page more">{{{content}}}</div>
+
+  script#contact(type="text/template").
+    <div class="page contact">{{{content}}}</div>
+
+  // -----------------------------
+  // Libraries
+  // -----------------------------
+
+  script(type="text/javascript", src="http://code.jquery.com/jquery-2.1.1.min.js")
+
+  script(type="text/javascript", src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore.js")
+
+  script(type="text/javascript", src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone.js")
+
+  script(type="text/javascript", src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js")
+
+
+  // -----------------------------
+  // Application
+  // -----------------------------
+
+  script(type="text/javascript", src="assets/scripts/main.js")
