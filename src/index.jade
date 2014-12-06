@@ -7,7 +7,7 @@ html
 
   meta(http-equiv="X-UA-Compatible", content="IE=edge")
 
-  title Web App Assignment
+  title Leah de Vries
 
   meta(name="description", content="Hello World")
 
@@ -21,17 +21,17 @@ html
 
     header.header
 
-      h1 World Maps
+      h1 Leah de Vries portfolio
 
       ul.nav
 
         li: a(href="/") Home
 
+        li: a(href="/work") Work
+
         li: a(href="/about") About
 
-        li: a(href="/services") Services
-
-        li: a(href="/more") More
+        li: a(href="/photography") Photography
 
         li: a(href="/contact") Contact
 
@@ -52,14 +52,18 @@ html
     {{/each}}
 
 
+  script#work(type="text/template").
+    <div class="page work">{{{content}}}</div>
+
   script#about(type="text/template").
     <div class="page about">{{{content}}}</div>
+    <h2>HI, MY NAME IS LEAH DE VRIES</h2>
+    <p>I’m an interactive designer, based out of Toronto with a background in graphic design &amp; photography. I focus on combining the user experience with creative visual design. I am passionate about solving problems through design &amp; learning about web accessibility. I thrive on continuous learning, I feel that it is the only way to embrace growth and development.</p>
 
-  script#services(type="text/template").
-    <div class="page services">{{{content}}}</div>
+    <p>When I’m not working on projects, you can find me drawing, taking photos, cruisin’ the streets of Toronto on my bicycle or hanging out with my two furry faced kitty friends, Ron and Crook.</p>
 
-  script#more(type="text/template").
-    <div class="page more">{{{content}}}</div>
+  script#photography(type="text/template").
+    <div class="page photography">{{{content}}}</div>
 
   script#contact(type="text/template").
     <div class="page contact">{{{content}}}</div>

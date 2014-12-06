@@ -14,9 +14,9 @@ jQuery(function($) {
     // Our Routes
     routes: {
       '' : 'home',
+      'work': 'work',
       'about': 'about',
-      'services': 'services',
-      'more': 'more',
+      'photography': 'photography',
       'contact': 'contact'
     },
 
@@ -26,22 +26,22 @@ jQuery(function($) {
       App.views['home'].render();
     },
 
-    // About Route
+    // WORK Route
+    work: function() {
+      console.log('Navigating to Work Page');
+      App.views['work'].render();
+    },
+
+     // ABOUT Route
     about: function() {
       console.log('Navigating to About Page');
       App.views['about'].render();
     },
 
-     // Services Route
-    services: function() {
-      console.log('Navigating to Services Page');
-      App.views['services'].render();
-    },
-
-     // More Route
-    more: function() {
-      console.log('Navigating to More Page');
-      App.views['more'].render();
+     // PHOTOGRAPHY
+    photography: function() {
+      console.log('Navigating to Photography Page');
+      App.views['photography'].render();
     },
 
     // Contact Route
@@ -64,9 +64,9 @@ jQuery(function($) {
     // Setup views
     this.views = {
       home: new HomeView(),
+      work: new WorkView(),
       about: new AboutView(),
-      services: new ServicesView(),
-      more: new MoreView(),
+      photography: new PhotographyView(),
       contact: new ContactView(),
     };
 
@@ -95,7 +95,7 @@ jQuery(function($) {
       this.model.set({
         content: '<h1>Home Page</h1>',
         portfolioItems: [
-        {name: 'Microsoft Project', image: 'someimage.jpg'},
+        {name: 'Microsoft Project', image: 'logo_black.jpg'},
         {name: 'Google Project', image: 'someimage.jpg'}
         ]
       });
@@ -119,13 +119,13 @@ jQuery(function($) {
   // About View
   // -----------------------------
 
-  var AboutView = Backbone.View.extend({
+  var WorkView = Backbone.View.extend({
 
     // Our Container Element
     el: $('.main'),
 
     // Our template ID
-    template: '#about',
+    template: '#work',
 
     // Initialize View
     initialize: function() {
@@ -136,7 +136,7 @@ jQuery(function($) {
 
       // Some page data
       this.model.set({
-        content: '<h1>About Page</h1>'
+        content: '<h1>Work Page</h1>'
       });
 
     },
@@ -157,13 +157,13 @@ jQuery(function($) {
   // Services View
   // -----------------------------
 
-  var ServicesView = Backbone.View.extend({
+  var AboutView = Backbone.View.extend({
 
     // Our Container Element
     el: $('.main'),
 
     // Our template ID
-    template: '#services',
+    template: '#about',
 
     // Initialize View
     initialize: function() {
@@ -174,7 +174,7 @@ jQuery(function($) {
 
       // Some page data
       this.model.set({
-        content: '<h1>Services Page</h1>'
+        // content: '<h1>About Page</h1>'
       });
 
     },
@@ -196,13 +196,13 @@ jQuery(function($) {
   // More View
   // -----------------------------
 
-  var MoreView = Backbone.View.extend({
+  var PhotographyView = Backbone.View.extend({
 
     // Our Container Element
     el: $('.main'),
 
     // Our template ID
-    template: '#more',
+    template: '#photography',
 
     // Initialize View
     initialize: function() {
@@ -213,7 +213,7 @@ jQuery(function($) {
 
       // Some page data
       this.model.set({
-        content: '<h1>More Page</h1>'
+        content: '<h1>Photos</h1>'
       });
 
     },
