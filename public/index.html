@@ -38,7 +38,13 @@
     
   </script>
   <script id="work" type="text/template">
-    <div class="page work">{{{content}}}</div>
+    <section class="page work">
+      <h2>{{{title}}}</h2>
+      <img src={{{thumbnail}}} alt={{{thumbnailAlt}}}>
+      <a href={{{thumbnailLink}}}>
+        <p>{{{description}}}</p>
+      </a>
+    </section>
     
   </script>
   <script id="about" type="text/template">

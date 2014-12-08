@@ -23,8 +23,6 @@ html
       video#bgvid(autoplay='', loop='', poster='assets/images/logo_black.png')
         source(src='assets/images/test.mp4', type='video/mp4')
 
-    
-
       img(src='assets/images/logo_black.png')
 
       ul.nav
@@ -57,7 +55,13 @@ html
 
 
   script#work(type="text/template").
-    <div class="page work">{{{content}}}</div>
+    <section class="page work">
+      <h2>{{{title}}}</h2>
+      <img src={{{thumbnail}}} alt={{{thumbnailAlt}}}>
+      <a href={{{thumbnailLink}}}>
+        <p>{{{description}}}</p>
+      </a>
+    </section>
 
   script#about(type="text/template").
     <div class="page about">{{{content}}}</div>

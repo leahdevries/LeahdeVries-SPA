@@ -95,7 +95,7 @@ jQuery(function($) {
       this.model.set({
         content: '<h1>Home Page</h1>',
         portfolioItems: [
-        {name: 'Microsoft Project', image: 'logo_black.jpg'},
+        {name: 'Microsoft Project', image: '../images/logo_black.png'},
         {name: 'Google Project', image: 'someimage.jpg'}
         ]
       });
@@ -116,7 +116,7 @@ jQuery(function($) {
   });
 
   // -----------------------------
-  // About View
+  // Work View
   // -----------------------------
 
   var WorkView = Backbone.View.extend({
@@ -136,7 +136,11 @@ jQuery(function($) {
 
       // Some page data
       this.model.set({
-        content: '<h1>Work Page</h1>'
+        title: 'Work',
+        thumbnail: '../images/logo_black.png',
+        thumbnailAlt: 'Photo',
+        description: 'example 1',
+        thumbnailLink: '#'
       });
 
     },
@@ -154,7 +158,7 @@ jQuery(function($) {
 
   });
    // -----------------------------
-  // Services View
+  // About View
   // -----------------------------
 
   var AboutView = Backbone.View.extend({
@@ -193,7 +197,7 @@ jQuery(function($) {
   });
 
    // -----------------------------
-  // More View
+  // Photos View
   // -----------------------------
 
   var PhotographyView = Backbone.View.extend({

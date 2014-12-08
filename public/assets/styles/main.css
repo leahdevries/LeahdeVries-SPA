@@ -86,9 +86,12 @@ h1 {
 
 /* line 93, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
 .footer {
-  padding: 20px; }
-  /* line 96, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
+  padding: 20px;
+  position: fixed;
+  bottom: 0; }
+  /* line 98, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
   .footer p {
     margin: 0;
     padding: 0;
-    font-size: 12px; }
+    font-size: 12px;
+    text-align: right; }
