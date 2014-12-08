@@ -59,27 +59,54 @@ h1
 // -----------------------------
 // Navigation
 // -----------------------------
+  
+header
+  nav
+    display: block
 
-.nav
-  margin: 0
-  padding: 40px 20px
-  float: right
-
-
-
-  li
+  .mainNav
     margin: 0
-    padding: 0
-    display: inline-block
-    list-style: none
+    padding: 40px 20px
+    float: right
+    // display: none
+    li
+      margin: 0
+      padding: 0
+      display: inline-block
+      list-style: none
+      a
+        padding: 5px 10px
+        color: white
+      a:hover
+        text-decoration: underline
+        color: pink
 
+// -----------------------------
+// Pop out Navigation
+// -----------------------------
 
-    a
-      padding: 5px 10px
-      color: white
-    a:hover
-      text-decoration: underline
-      color: pink
+div.wrapper
+  div#sidr
+    display: none
+    position: absolute
+    position: fixed
+    top: 0
+    right: 0
+    height: 100%
+    z-index: 999999
+    width: 184px
+    // font-family: 'bebas_neuebook'
+    // font-size: 21px
+    background-color: #4d4d4d
+    color: rgba(255,255,255,1)
+    ul
+      width: 80%
+      margin:10%
+      li
+        padding: 5px 0
+        margin: 5px 0
+        list-style-type: none
+
 
 // -----------------------------
 // Main
@@ -116,6 +143,7 @@ h1
       // background-size: center
     img 
       padding: 20px
+      float: left
 
 
 

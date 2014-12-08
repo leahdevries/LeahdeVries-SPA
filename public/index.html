@@ -12,8 +12,9 @@
     <header class="header">
       <video id="bgvid" autoplay="" loop="" poster="assets/images/logo_black.png">
         <source src="assets/images/test.mp4" type="video/mp4">
-      </video><img src="assets/images/logo_black.png">
-      <ul class="nav">
+      </video>
+      <nav><img src="assets/images/logo_black.png" alt="logo placeholder"><a id="simple-menu" href="#sidr" style="float: right"><img src="assets/images/settingsIcon.png"></a></nav>
+      <ul class="mainNav">
         <li><a href="/">Home</a></li>
         <li><a href="/work">Work</a></li>
         <li><a href="/about">About</a></li>
@@ -21,6 +22,15 @@
         <li><a href="/contact">Contact</a></li>
       </ul>
     </header>
+    <div id="sidr">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/work">Work</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/photography">Photography</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
     <div class="main"></div>
     <footer class="footer">
       <p>Copyright &copy; 2014</p>
@@ -40,7 +50,7 @@
   <script id="work" type="text/template">
     <section class="page work">
       <h2>{{{title}}}</h2>
-      <img src={{{thumbnail}}} alt={{{thumbnailAlt}}}>
+      <img src={{{../thumbnail}}} alt={{{thumbnailAlt}}}>
       <a href={{{thumbnailLink}}}>
         <p>{{{description}}}</p>
       </a>
@@ -67,6 +77,7 @@
   <!-- Libraries-->
   <!-- ------------------------------->
   <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="/scripts/jquery.sidr.min.js"></script>
   <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore.js"></script>
   <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone.js"></script>
   <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
