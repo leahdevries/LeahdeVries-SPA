@@ -5,12 +5,41 @@
 
 jQuery(function($) {
 
+  // -----------------------------
+  // An array of projects
+  // -----------------------------
+
+  var projects = [
+    { 
+      id: '0',
+      title: 'Project 1',
+      thumbnail: '/assets/images/logo_black.png',
+      thumbnailAlt: 'Photo',
+      description: 'example 1',
+      classes: 'photos art'
+    },
+    { 
+      id: '1',
+      title: 'Project 2',
+      thumbnail: '/assets/images/logo_black.png',
+      thumbnailAlt: 'Photo 2',
+      description: 'example 2',
+      classes: 'photos'
+    },
+    { 
+      id: '2',
+      title: 'Project 3',
+      thumbnail: '/assets/images/logo_black.png',
+      thumbnailAlt: 'Photo 3',
+      description: 'example 3',
+      classes: 'art'
+    }
+  ];
 
   // -----------------------------
   // Side Nav
   // -----------------------------
 
- 
   $( '#simple-menu' ).sidr({
     side: 'right'
   });
@@ -27,7 +56,7 @@ jQuery(function($) {
       '' : 'home',
       'work': 'work',
       'about': 'about',
-      'photography': 'photography',
+      'project/:id': 'project',
       'contact': 'contact'
     },
 
@@ -49,10 +78,10 @@ jQuery(function($) {
       App.views['about'].render();
     },
 
-     // PHOTOGRAPHY
-    photography: function() {
-      console.log('Navigating to Photography Page');
-      App.views['photography'].render();
+     // Project
+    project: function(id) {
+      console.log('Navigating to a Project Page:', id);
+      App.views['project'].render(id);
     },
 
     // Contact Route
@@ -77,14 +106,11 @@ jQuery(function($) {
       home: new HomeView(),
       work: new WorkView(),
       about: new AboutView(),
-      photography: new PhotographyView(),
+      project: new ProjectView(),
       contact: new ContactView(),
     };
 
   };
-
-
-
 
   // -----------------------------
   // Home View
@@ -150,11 +176,7 @@ jQuery(function($) {
 
       // Some page data
       this.model.set({
-        title: 'Work',
-        thumbnail: '../images/logo_black.png',
-        thumbnailAlt: 'Photo',
-        description: 'example 1',
-        thumbnailLink: '#'
+        projects: projects
       });
 
     },
@@ -168,10 +190,48 @@ jQuery(function($) {
 
       // Set update the containers HTML
       $(this.el).html(html);
+
+      // Add jQuery Isotope
+      var $container = $('.page.work');
+      
+      $container.isotope({
+        filter: '*',
+        animationOptions: {
+          duration: 750,
+          easing: 'linear',
+          queue: false
+        }
+      });
+      
+      // Bind to our navigation items, the filtering of projects
+      $('.projectCategories a').click(function(){
+          
+          // Remove the current class from the old link
+          $('.projectCategories .current').removeClass('current');
+          
+          // Add the current class to the link the user clicked
+          $(this).addClass('current');
+          
+          // Find the selector/filter from the link clicked
+          var selector = $(this).attr('data-class');
+
+          // Filter our isotope gallery based on the data-class of the link clicked
+          $container.isotope({
+            filter: selector,
+            animationOptions: {
+              duration: 750,
+              easing: 'linear',
+              queue: false
+            }
+          });
+          return false;
+      }); 
+
     }
 
   });
-   // -----------------------------
+
+  // -----------------------------
   // About View
   // -----------------------------
 
@@ -211,16 +271,16 @@ jQuery(function($) {
   });
 
    // -----------------------------
-  // Photos View
+  // Project View
   // -----------------------------
 
-  var PhotographyView = Backbone.View.extend({
+  var ProjectView = Backbone.View.extend({
 
     // Our Container Element
     el: $('.main'),
 
     // Our template ID
-    template: '#photography',
+    template: '#project',
 
     // Initialize View
     initialize: function() {
@@ -229,15 +289,13 @@ jQuery(function($) {
       this.template = Handlebars.compile($(this.template).html());
       this.model = new Backbone.Model({});
 
-      // Some page data
-      this.model.set({
-        content: '<h1>Photos</h1>'
-      });
-
     },
 
     // Our Render Function
-    render: function() {
+    render: function(id) {
+
+      // Some page data
+      this.model.set(projects[id]);
 
       // Get data and render our template
       var data = this.model.toJSON();
@@ -284,6 +342,22 @@ jQuery(function($) {
 
       // Set update the containers HTML
       $(this.el).html(html);
+    
+      // Send our contact form
+      $('.submit').on('click', function(e) {
+        
+        e.preventDefault();
+
+        // Get our information
+        var text = $('.text').val();
+        var subject = $('.submit').val();
+        var email = $('.email').val();
+
+        // Prompt a mailto dialog box with prepoluated data
+        document.location = 'mailto:yourEmail@you.com?subject=' + escape(subject) + '&body=' + escape(text.selection) + '/r/nFrom:' + email;
+
+      });
+
     }
 
   });

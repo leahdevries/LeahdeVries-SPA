@@ -3,110 +3,143 @@ html
 
   head
 
-  meta(charset="utf-8")
+    meta(charset="utf-8")
 
-  meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
 
-  title Leah de Vries
+    title Leah de Vries
 
-  meta(name="description", content="Hello World")
+    meta(name="description", content="Hello World")
 
-  meta(name="viewport", content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui")
+    meta(name="viewport", content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui")
 
-  link(rel="stylesheet", href="assets/styles/main.css", type="text/css")
+    link(rel="stylesheet", href="assets/styles/main.css", type="text/css")
 
   body
   
-  div.wrapper
+    div.wrapper
 
-    header.header
+      header.header
 
-      video#bgvid(autoplay='', loop='', poster='assets/images/logo_black.png')
-        source(src='assets/images/test.mp4', type='video/mp4')
+        video#bgvid(autoplay='', loop='', poster='assets/images/logo_black.png')
+          source(src='assets/images/test.mp4', type='video/mp4')
 
-      nav
-        img(src='assets/images/logo_black.png', alt='logo placeholder')
-        a#simple-menu(href='#sidr', style= 'float: right')
-          img(src='assets/images/settingsIcon.png') 
-          
-      ul.mainNav
-        li: a(href="/") Home
+        nav
+          img(src='assets/images/logo_black.png', alt='logo placeholder')
+          a#simple-menu(href='#sidr', style= 'float: right')
+            img(src='assets/images/settingsIcon.png') 
+            
+        ul.mainNav
+          li: a(href="/") Home
 
-        li: a(href="/work") Work
+          li: a(href="/work") Work
 
-        li: a(href="/about") About
+          li: a(href="/about") About
 
-        li: a(href="/photography") Photography
+          li: a(href="/contact") Contact
 
-        li: a(href="/contact") Contact
+      div#sidr
+            ul
+              li: a(href="/") Home
 
-    div#sidr
-          ul
-            li: a(href="/") Home
+              li: a(href="/work") Work
 
-            li: a(href="/work") Work
+              li: a(href="/about") About
 
-            li: a(href="/about") About
+              li: a(href="/contact") Contact
+      div.main
 
-            li: a(href="/photography") Photography
+      footer.footer
 
-            li: a(href="/contact") Contact
-    div.main
+        p Copyright &copy; 2014
 
-    footer.footer
+    // -----------------------------
+    // Home Page Template
+    // -----------------------------
 
-      p Copyright &copy; 2014
+    script#home(type="text/template").
+      <div class="page home">{{{content}}}</div>
+      {{#each portfolioitems}}
+        <p>{{name}}; {{image}}</p>
+      {{/each}}
 
-  // -----------------------------
-  // Templates
-  // -----------------------------
+    // -----------------------------
+    // Work Page Template
+    // -----------------------------
 
-  script#home(type="text/template").
-    <div class="page home">{{{content}}}</div>
-    {{#each portfolioitems}}
-    <p>{{name}}; {{image}}</p>
-    {{/each}}
+    script#work(type="text/template").
+      <ul class="projectCategories">
+        <li><a href="#" data-class="*" class="current">All</a></li>
+        <li><a href="#" data-class=".photos">Photos</a></li>
+        <li><a href="#" data-class=".art">Art</a></li>
+      </ul>
+
+      <section class="page work">
+        {{#each projects}}
+          <div class="project {{{classes}}}">
+            <h2>{{{title}}}</h2>
+            <img src="{{{thumbnail}}}" alt="{{{thumbnailAlt}}}">
+            <a href="/project/{{{id}}}">
+              <p>{{{description}}}</p>
+            </a>
+          </div>
+        {{/each}}
+      </section>
+
+    // -----------------------------
+    // About Page Template
+    // -----------------------------
+
+    script#about(type="text/template").
+      <div class="page about">{{{content}}}</div>
+      <h2>HI, MY NAME IS LEAH DE VRIES</h2>
+      <p>I’m an interactive designer, based out of Toronto with a background in graphic design &amp; photography. I focus on combining the user experience with creative visual design. I am passionate about solving problems through design &amp; learning about web accessibility. I thrive on continuous learning, I feel that it is the only way to embrace growth and development.</p>
+      <p>When I’m not working on projects, you can find me drawing, taking photos, cruisin’ the streets of Toronto on my bicycle or hanging out with my two furry faced kitty friends, Ron and Crook.</p>
+
+    // -----------------------------
+    // Project Page Template
+    // -----------------------------
+
+    script#project(type="text/template").
+      <div class="page">
+        <a href="/work">Back</a>
+        <h2>{{{title}}}</h2>
+        <img src="{{{thumbnail}}}" alt="{{{thumbnailAlt}}}">
+        {{{content}}}
+      </div>
+
+    // -----------------------------
+    // Contact Page Template
+    // -----------------------------
+
+    script#contact(type="text/template").
+      <div class="page contact">
+        {{{content}}}
+        Email: <input type="text" class="email">
+        Subject: <input type="text" class="subject">
+        Description: <textarea class="text"></textarea>
+        <button class="submit">Send</button>
+      </div>
+
+    // -----------------------------
+    // Libraries
+    // -----------------------------
+
+    script(type="text/javascript", src="http://code.jquery.com/jquery-2.1.1.min.js")
+
+    script(type='text/javascript', src="assets/scripts/jquery.sidr.min.js")
+
+    script(type='text/javascript', src="assets/scripts/jquery.isotope.js")
+
+    script(type="text/javascript", src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore.js")
+
+    script(type="text/javascript", src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone.js")
+
+    script(type="text/javascript", src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js")
 
 
-  script#work(type="text/template").
-    <section class="page work">
-      <h2>{{{title}}}</h2>
-      <img src={{{../thumbnail}}} alt={{{thumbnailAlt}}}>
-      <a href={{{thumbnailLink}}}>
-        <p>{{{description}}}</p>
-      </a>
-    </section>
+    // -----------------------------
+    // Application
+    // -----------------------------
 
-  script#about(type="text/template").
-    <div class="page about">{{{content}}}</div>
-    <h2>HI, MY NAME IS LEAH DE VRIES</h2>
-    <p>I’m an interactive designer, based out of Toronto with a background in graphic design &amp; photography. I focus on combining the user experience with creative visual design. I am passionate about solving problems through design &amp; learning about web accessibility. I thrive on continuous learning, I feel that it is the only way to embrace growth and development.</p>
-
-    <p>When I’m not working on projects, you can find me drawing, taking photos, cruisin’ the streets of Toronto on my bicycle or hanging out with my two furry faced kitty friends, Ron and Crook.</p>
-
-  script#photography(type="text/template").
-    <div class="page photography">{{{content}}}</div>
-
-  script#contact(type="text/template").
-    <div class="page contact">{{{content}}}</div>
-
-  // -----------------------------
-  // Libraries
-  // -----------------------------
-
-  script(type="text/javascript", src="http://code.jquery.com/jquery-2.1.1.min.js")
-
-  script(type='text/javascript', src="assets/scripts/jquery.sidr.min.js")
-
-  script(type="text/javascript", src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore.js")
-
-  script(type="text/javascript", src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone.js")
-
-  script(type="text/javascript", src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js")
-
-
-  // -----------------------------
-  // Application
-  // -----------------------------
-
-  script(type="text/javascript", src="assets/scripts/main.js")
+    script(type="text/javascript", src="assets/scripts/main.js")
