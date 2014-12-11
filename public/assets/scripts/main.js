@@ -15,15 +15,14 @@ jQuery(function($) {
       title: 'web app /',
       thumbnail: '/assets/images/carbonTracker-thumb.jpg',
       thumbnailAlt: 'Photo',
-      description: 'example 1',
-      classes: 'photos art'
+      classes: 'photos art',
+      content: 'The Canadian Open Data Experience (CODE) is the first nationwide Open Data Hackathon in Canada. An intense 48-hour coding sprint where innovators from coast to coast compete to build the best app utilizing federal government data from the Canadian Open Data Portal. Working in a team of four, we came up with an efficient way to track the carbon emissions from your vehicle. We created this app to help people understand the impact that their vehicles have on the environment & as a tool to use when purchasing or renting a vehicle.'
     },
     { 
       id: '1',
       title: 'wordpress theme /',
       thumbnail: '/assets/images/wp-thumb.jpg',
       thumbnailAlt: 'Photo 2',
-      description: 'example 2',
       classes: 'photos'
     },
     { 
@@ -31,8 +30,28 @@ jQuery(function($) {
       title: 'infographic /',
       thumbnail: '/assets/images/CCD-thumb.jpg',
       thumbnailAlt: 'Photo 3',
-      description: 'example 3',
       classes: 'art'
+    },
+    { 
+      id: '3',
+      title: 'web app /',
+      thumbnail: '/assets/images/carbonTracker-thumb.jpg',
+      thumbnailAlt: 'Photo 3',
+      classes: 'ui'
+    },
+    { 
+      id: '4',
+      title: 'wordpress theme /',
+      thumbnail: '/assets/images/wp-thumb.jpg',
+      thumbnailAlt: 'Photo 4',
+      classes: 'photos'
+    },
+    { 
+      id: '5',
+      title: 'infographic /',
+      thumbnail: '/assets/images/CCD-thumb.jpg',
+      thumbnailAlt: 'Photo 5',
+      classes: 'ui art'
     }
   ];
 

@@ -219,23 +219,41 @@ section.home
       text-align: center
       font-size: 1.2em
       
-
-
 // -----------------------------
 // WORK
 // -----------------------------
 
+section.workTop
+  h1
+    float: left
+    width: 100%
+    margin-top: 0
+  ul.projectCategories
+    list-style-type: none
+    width: 100%
+    text-align: center
+    li 
+      display: inline-block
 
-
-// -----------------------------
-// ABOUT
-// -----------------------------
-
-div.aboutWrapper
-    width: 75%
-    margin: 0 auto
+section.work
+  width: 100%
+  max-width: 800px
+  margin: 0 auto
+  height: 900px
+  a 
+    margin: 0 1.25%
+    cursor: url(../images/magnify.png), auto;
+  div.project 
+    margin: 5px
+    img
+      float: left
+      border-radius: 50%
+      margin-bottom: 20px
+      width:100%
     h2
-      text-transform: uppercase
+      text-align: center
+      font-size: 1.2em
+
 
 // -----------------------------
 // Work / Isotope Specific CSS
@@ -264,6 +282,52 @@ div.aboutWrapper
   -moz-transition-property: -moz-transform, opacity
   transition-property: transform, opacity
 
+
+// -----------------------------
+// PROJECTS
+// -----------------------------
+div.main
+  position: relative
+div.projectStart
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  a   
+    border: #308c8b solid 2px;
+    padding: 10px;
+    width: 100px;
+    background: none;
+    color: #308c8b;
+    float: left;
+    width: 20%;
+    margin: 20px;
+    &:hover
+      background-color: rgba(48,140,139,0.8)
+      color: white 
+      -webkit-transition: .8s ease-in-out
+  div.anotherContainer
+    float: left
+    width: 74%
+    img
+      float: left
+      width: 30%
+    p 
+      float: left;
+      width: 60%;
+      margin: 0;
+      padding-left: 10px;
+
+
+
+// -----------------------------
+// ABOUT
+// -----------------------------
+
+div.aboutWrapper
+    width: 75%
+    margin: 0 auto
+    h2
+      text-transform: uppercase
 
 // -----------------------------
 // CONTACT
@@ -305,12 +369,11 @@ div.contact
 // -----------------------------
 
 .footer
-  padding: 20px
+  padding: 10px 20px 10px 0
   bottom: 0
-  position: fixed
-  background-color: grey
   p
     margin: 0
     padding: 0
     font-size: 12px
     text-align: right
+    color: grey

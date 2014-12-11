@@ -86,16 +86,20 @@ html
       // -----------------------------
 
       script#work(type="text/template").
-        <h1>Projects /</h1>
-        <ul class="projectCategories">
-          <li><a href="#" data-class="*" class="current">All</a></li>
-          <li>/</li>
-          <li><a href="#" data-class=".photos">Photos</a></li>
-          <li>/</li>
-          <li><a href="#" data-class=".art">Art</a></li>
-        </ul>
+        <section class="workTop"> 
+          <h1>Projects /</h1>
+          <ul class="projectCategories">
+            <li><a href="#" data-class="*" class="current">All</a></li>
+            <li>/</li>
+            <li><a href="#" data-class=".photos">Photos</a></li>
+            <li>/</li>
+            <li><a href="#" data-class=".art">Art</a></li>
+            <li>/</li>
+            <li><a href="#" data-class=".ui">UI Design</a></li>
+          </ul>
+        </section>
 
-        <section class="page work">
+        <section class="page work"> 
           {{#each projects}}
             <a href="/project/{{{id}}}">
               <div class="project {{{classes}}}">
@@ -123,11 +127,13 @@ html
       // -----------------------------
 
       script#project(type="text/template").
-        <div class="page">
+        <div class="page projectStart">
           <a href="/work">Back</a>
-          <h2>{{{title}}}</h2>
-          <img src="{{{thumbnail}}}" alt="{{{thumbnailAlt}}}">
-          {{{content}}}
+          <div class="anotherContainer">
+            <h2>{{{title}}}</h2>
+            <img src="{{{thumbnail}}}" alt="{{{thumbnailAlt}}}">
+            <p>{{{content}}}</p>
+          </div> <!--anothercontainer-->
         </div>
 
       // -----------------------------
