@@ -11,10 +11,10 @@
   <body>
     <div class="wrapper">
       <header class="header">
-        <video id="bgvid" autoplay="" loop="" poster="assets/images/logo_black.png">
-          <source src="assets/images/test.mp4" type="video/mp4">
+        <video id="bgvid" autoplay="" loop="" poster="assets/images/logo_black.png" width="1280px">
+          <source src="assets/images/test.mp4" type="video/mp4" width="1280px">
         </video>
-        <nav><img src="assets/images/logo_black.png" alt="logo placeholder">
+        <nav><img src="assets/images/logo_black.png" alt="logo">
           <ul class="mainNav">
             <li><a href="/">Home</a></li>
             <li>/</li>
@@ -23,15 +23,7 @@
             <li><a href="/about">About</a></li>
             <li>/</li>
             <li><a href="/contact">Contact</a></li>
-          </ul><a id="simple-menu" class="menu example5"><span></span></a>
-          <div id="sidr">
-            <ul>
-              <li><a href="/">Home</a></li>
-              <li><a href="/work">Work</a></li>
-              <li><a href="/about">About</a></li>
-              <li><a href="/contact">Contact</a></li>
-            </ul>
-          </div>
+          </ul>
         </nav>
         <h2>I am an interactive designer with a background in graphic design &amp; photography who focuses on user experience &amp; visual design.</h2>
       </header>
@@ -44,15 +36,17 @@
       <!-- ------------------------------->
       <script id="home" type="text/template">
         <section class="page home">
+          <h1>Featured Projects /</h1>
+          <div class="projectContainer">
           {{#each projects}}
-            <div class="project {{{classes}}}">
-              <img src="{{{thumbnail}}}" alt="{{{thumbnailAlt}}}">
-              <h2>{{{title}}}</h2>
-              <a href="/project/{{{id}}}">
-                <p>{{{description}}}</p>
-              </a>
-            </div>
+            <a href="/project/{{{id}}}">
+              <div class="project {{{classes}}}">
+                <img src="{{{thumbnail}}}" alt="{{{thumbnailAlt}}}">
+                <h2>{{{title}}}</h2>
+              </div>
+            </a>
           {{/each}}
+          </div> <!--projectContainer-->
         </section>
         
       </script>
@@ -60,6 +54,7 @@
       <!-- Work Page Template-->
       <!-- ------------------------------->
       <script id="work" type="text/template">
+        <h1>Projects /</h1>
         <ul class="projectCategories">
           <li><a href="#" data-class="*" class="current">All</a></li>
           <li>/</li>
@@ -70,12 +65,11 @@
         
         <section class="page work">
           {{#each projects}}
-            <div class="project {{{classes}}}">
-              <img src="{{{thumbnail}}}" alt="{{{thumbnailAlt}}}">
-              <h2>{{{title}}}</h2>
-              <a href="/project/{{{id}}}">
-                <p>{{{description}}}</p>
-              </a>
+            <a href="/project/{{{id}}}">
+              <div class="project {{{classes}}}">
+                <img src="{{{thumbnail}}}" alt="{{{thumbnailAlt}}}">
+                <h2>{{{title}}}</h2>
+            </a>
             </div>
           {{/each}}
         </section>
@@ -111,9 +105,12 @@
       <script id="contact" type="text/template">
         <div class="page contact">
           {{{content}}}
-          Email: <input type="text" class="email">
-          Subject: <input type="text" class="subject">
-          Description: <textarea class="text"></textarea>
+          <h3>Email:</h3>
+          <input type="text" class="email">
+          <h3>Subject:</h3>
+          <input type="text" class="subject">
+          <h3>Description:</h3>
+          <textarea class="text"></textarea>
           <button class="submit">Send</button>
         </div>
         

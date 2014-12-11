@@ -39,26 +39,23 @@ jQuery(function($) {
       var featuredProjects = [
     { 
       id: '0',
-      title: 'web app /',
+      title: 'web app',
       thumbnail: '/assets/images/carbonTracker-thumb.jpg',
       thumbnailAlt: 'Photo',
-      description: 'example 1',
       classes: 'photos art'
     },
     { 
       id: '1',
-      title: 'wordpress theme /',
+      title: 'wordpress theme',
       thumbnail: '/assets/images/wp-thumb.jpg',
       thumbnailAlt: 'Photo 2',
-      description: 'example 2',
       classes: 'photos'
     },
     { 
       id: '2',
-      title: 'infographic /',
+      title: 'infographic',
       thumbnail: '/assets/images/CCD-thumb.jpg',
       thumbnailAlt: 'Photo 3',
-      description: 'example 3',
       classes: 'art'
     }
   ];

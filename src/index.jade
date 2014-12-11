@@ -21,10 +21,11 @@ html
 
       header.header
 
-        video#bgvid(autoplay='', loop='', poster='assets/images/logo_black.png')
-          source(src='assets/images/test.mp4', type='video/mp4')
+        video#bgvid(autoplay='', loop='', poster='assets/images/logo_black.png', width="1280px")
+          source(src='assets/images/test.mp4', type='video/mp4' width="1280px")
+
         nav
-          img(src='assets/images/logo_black.png', alt='logo placeholder')
+          img(src='assets/images/logo_black.png', alt='logo')
         
           ul.mainNav
             li: a(href="/") Home
@@ -41,18 +42,18 @@ html
 
             li: a(href="/contact") Contact
 
-          a.menu.example5#simple-menu
-            span
+          //- a.menu.example5#simple-menu
+          //-   span
 
-          div#sidr
-            ul
-              li: a(href="/") Home
+          //- div#sidr
+          //-   ul
+          //-     li: a(href="/") Home
 
-              li: a(href="/work") Work
+          //-     li: a(href="/work") Work
 
-              li: a(href="/about") About
+          //-     li: a(href="/about") About
 
-              li: a(href="/contact") Contact
+          //-     li: a(href="/contact") Contact
 
         h2 I am an interactive designer with a background in graphic design &amp; photography who focuses on user experience &amp; visual design.
       div.main
@@ -67,15 +68,17 @@ html
 
       script#home(type="text/template").
         <section class="page home">
+          <h1>Featured Projects /</h1>
+          <div class="projectContainer">
           {{#each projects}}
-            <div class="project {{{classes}}}">
-              <img src="{{{thumbnail}}}" alt="{{{thumbnailAlt}}}">
-              <h2>{{{title}}}</h2>
-              <a href="/project/{{{id}}}">
-                <p>{{{description}}}</p>
-              </a>
-            </div>
+            <a href="/project/{{{id}}}">
+              <div class="project {{{classes}}}">
+                <img src="{{{thumbnail}}}" alt="{{{thumbnailAlt}}}">
+                <h2>{{{title}}}</h2>
+              </div>
+            </a>
           {{/each}}
+          </div> <!--projectContainer-->
         </section>
 
       // -----------------------------
@@ -83,6 +86,7 @@ html
       // -----------------------------
 
       script#work(type="text/template").
+        <h1>Projects /</h1>
         <ul class="projectCategories">
           <li><a href="#" data-class="*" class="current">All</a></li>
           <li>/</li>
@@ -93,12 +97,11 @@ html
 
         <section class="page work">
           {{#each projects}}
-            <div class="project {{{classes}}}">
-              <img src="{{{thumbnail}}}" alt="{{{thumbnailAlt}}}">
-              <h2>{{{title}}}</h2>
-              <a href="/project/{{{id}}}">
-                <p>{{{description}}}</p>
-              </a>
+            <a href="/project/{{{id}}}">
+              <div class="project {{{classes}}}">
+                <img src="{{{thumbnail}}}" alt="{{{thumbnailAlt}}}">
+                <h2>{{{title}}}</h2>
+            </a>
             </div>
           {{/each}}
         </section>
@@ -134,9 +137,12 @@ html
       script#contact(type="text/template").
         <div class="page contact">
           {{{content}}}
-          Email: <input type="text" class="email">
-          Subject: <input type="text" class="subject">
-          Description: <textarea class="text"></textarea>
+          <h3>Email:</h3>
+          <input type="text" class="email">
+          <h3>Subject:</h3>
+          <input type="text" class="subject">
+          <h3>Description:</h3>
+          <textarea class="text"></textarea>
           <button class="submit">Send</button>
         </div>
 

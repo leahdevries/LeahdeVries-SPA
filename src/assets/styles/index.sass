@@ -4,7 +4,7 @@
 // -----------------------------
 
 $color: #555
-$lightColor: #efefef
+$desktop: 1280px
 $darkColor: #333
 $blue: #308c8b
 
@@ -30,9 +30,12 @@ a
   display: inline-block
   color: $color
 
-h2
+h1, h2, h3, p
   font-family: futura
   font-weight: normal
+  -webkit-font-smoothing: antialiased
+  -moz-font-smoothing: antialiased
+  font-smoothing: antialiased
 
 // -----------------------------
 // App Specific
@@ -52,7 +55,6 @@ h2
 
 header.header
   padding: 20px
-  border-bottom: 1px solid $lightColor
   background-size: 100%
   background-position: center top
 
@@ -63,7 +65,7 @@ header.header
 .wrapper
   header
     padding: 0
-    height: 350px
+    height: 100%
     overflow: hidden
     position: relative
     video#bgvid
@@ -71,6 +73,7 @@ header.header
       width: 100%
       z-index: -100
       max-width: 1280px
+      min-width: 600px
       background-position: center bottom
     nav
       float: left;
@@ -79,7 +82,7 @@ header.header
         padding: 20px 0 0 20px
         float: left
       ul.mainNav
-        display: none
+        display: block
         margin: 0
         padding: 40px 20px
         float: right
@@ -88,12 +91,10 @@ header.header
           padding: 0
           display: inline-block
           list-style: none
+          color: rgba(255,255,255,0.8)
           a
             padding: 5px 10px
             color: rgba(255,255,255,0.8)
-            -webkit-font-smoothing: antialiased
-            -moz-font-smoothing: antialiased
-            font-smoothing: antialiased
           a:hover
             text-decoration: underline
             color: $blue
@@ -116,77 +117,72 @@ header.header
             margin: 5px 0
             list-style-type: none
     h2
-      width: 50%
+      width: 60%
       margin: 0 auto
       color: rgba(255,255,255,0.9)
-      -webkit-font-smoothing: antialiased
-      -moz-font-smoothing: antialiased
-      font-smoothing: antialiased
       overflow: hidden
       font-size: 16px
       text-align: center
-      padding-top: 10%
+      padding: 10% 0
 
 // -----------------------------
 // Hamburger X Menu
 // -----------------------------
-.menu
+// .menu
   // position: relative
-  display: inline-block
+  // display: inline-block
   // display: none
-  float: right
-  width: 30px
-  height: 30px
-  margin: 20px
-  span
-    margin: 0 auto
-    position: relative
-    top: 12px
-    &:before, &:after
-      position: absolute
-      content: ''
-    width: 30px
-    height: 6px
-    // background-color: $blue
-    background-color: rgba(255,255,255,0.8)
-    display: block
-    &:before, &:after
-      width: 30px
-      height: 6px
-      // background-color: $blue
-      background-color: rgba(255,255,255,0.8)
-      display: block
-    &:before
-      margin-top: -12px
-    &:after
-      margin-top: 12px
+  // float: right
+  // width: 30px
+  // height: 30px
+  // margin: 20px
+  // span
+  //   margin: 0 auto
+  //   position: relative
+  //   top: 12px
+  //   &:before, &:after
+  //     position: absolute
+  //     content: ''
+  //   width: 30px
+  //   height: 6px
+  //   background-color: rgba(255,255,255,0.8)
+  //   display: block
+  //   &:before, &:after
+  //     width: 30px
+  //     height: 6px
+  //     background-color: rgba(255,255,255,0.8)
+  //     display: block
+  //   &:before
+  //     margin-top: -12px
+  //   &:after
+  //     margin-top: 12px
 
 // -----------------------------
 // Animated X
 // -----------------------------
-.example5
-  span
-    -webkit-transition-duration: 0s
-    -webkit-transition-delay: .2s
-  &:hover span
-    background-color: rgba(0, 0, 0, 0)
-    -webkit-transition-delay: .2s
-  span:before
-    -webkit-transition-property: margin, -webkit-transform
-    -webkit-transition-duration: .2s
-    -webkit-transition-delay: .2s, 0
-  &:hover span:before, &:active span:before
-    margin-top: 0
-    -webkit-transform: rotate(45deg)
-    -webkit-transition-delay: 0, .2s
-  span:after
-    -webkit-transition-property: margin, -webkit-transform
-    -webkit-transition-duration: .2s
-    -webkit-transition-delay: .2s, 0
-  &:hover span:after, &:active span:before
-    margin-top: 0
-    -webkit-transform: rotate(-45deg)
-    -webkit-transition-delay: 0, .2s
+// .example5
+//   span
+//     -webkit-transition-duration: 0s
+//     -webkit-transition-delay: .2s
+//   &:hover span
+//     background-color: rgba(0, 0, 0, 0)
+//     -webkit-transition-delay: .2s
+//   span:before
+//     -webkit-transition-property: margin, -webkit-transform
+//     -webkit-transition-duration: .2s
+//     -webkit-transition-delay: .2s, 0
+//   &:hover span:before, &:active span:before
+//     margin-top: 0
+//     -webkit-transform: rotate(45deg)
+//     -webkit-transition-delay: 0, .2s
+//   span:after
+//     -webkit-transition-property: margin, -webkit-transform
+//     -webkit-transition-duration: .2s
+//     -webkit-transition-delay: .2s, 0
+//   &:hover span:after, &:active span:before
+//     margin-top: 0
+//     -webkit-transform: rotate(-45deg)
+//     -webkit-transition-delay: 0, .2s
 
 // -----------------------------
 // Main
@@ -199,30 +195,37 @@ header.header
 // HOME
 // -----------------------------
 
-// section.home
-//   h2
-//     font-size: 14px
-//   div.project 
-//     float: left
+section.home 
+  h1
+    float: left
+    width: 100%
+  div.projectContainer
+    width: 100%
+    max-width: 900px
+    margin: 0 auto
+    overflow: hidden
+  a 
+    width: 30%
+    margin: 0 1.25%
+    cursor: url(../images/magnify.png), auto;
+  div.project 
+    float: left
+    img
+      float: left
+      border-radius: 50%
+      margin-bottom: 20px
+      width:100%
+    h2
+      text-align: center
+      font-size: 1.2em
+      
+
 
 // -----------------------------
 // WORK
 // -----------------------------
-// section.work
-//   ul.projectCategories
-//     list-style-type: none
-//     font-size: 1.2em
-//     -webkit-font-smoothing: antialiased
-//     -moz-font-smoothing: antialiased
-//     font-smoothing: antialiased
-//     li
-//       display: inline-block
-//       &:hover a
-//         color: $blue
-//         text-decoration: underline
-//   section.work 
-//     div.project 
-//       float: left
+
+
 
 // -----------------------------
 // ABOUT
@@ -261,17 +264,53 @@ div.aboutWrapper
   -moz-transition-property: -moz-transform, opacity
   transition-property: transform, opacity
 
+
+// -----------------------------
+// CONTACT
+// -----------------------------
+
+div.contact 
+  width: 75%
+  margin: 0 auto
+  h1
+    text-transform: uppercase
+    font-size: 1.5em
+    margin-bottom: 50px
+  h3
+    font-size: 1em
+    margin: 0
+    float: left
+    width: 25%
+  input, textarea
+    border: $blue solid 2px 
+    padding: 10px
+    box-shadow: none
+    width: 75%
+    margin: 5px 0 20px
+    display: block
+  button
+    border: $blue solid 2px
+    padding: 10px
+    width: 35%
+    float: right
+    background: none
+    color: $blue
+    &:hover
+      background-color: rgba(48,140,139,0.8)
+      color: white 
+      -webkit-transition: .8s ease-in-out
+
 // -----------------------------
 // Footer
 // -----------------------------
 
 .footer
   padding: 20px
-  position: fixed
   bottom: 0
+  position: fixed
+  background-color: grey
   p
     margin: 0
     padding: 0
     font-size: 12px
     text-align: right
-
