@@ -12,30 +12,57 @@ jQuery(function($) {
   var projects = [
     { 
       id: '0',
-      title: 'Project 1',
-      thumbnail: '/assets/images/logo_black.png',
+      title: 'web app /',
+      thumbnail: '/assets/images/carbonTracker-thumb.jpg',
       thumbnailAlt: 'Photo',
       description: 'example 1',
       classes: 'photos art'
     },
     { 
       id: '1',
-      title: 'Project 2',
-      thumbnail: '/assets/images/logo_black.png',
+      title: 'wordpress theme /',
+      thumbnail: '/assets/images/wp-thumb.jpg',
       thumbnailAlt: 'Photo 2',
       description: 'example 2',
       classes: 'photos'
     },
     { 
       id: '2',
-      title: 'Project 3',
-      thumbnail: '/assets/images/logo_black.png',
+      title: 'infographic /',
+      thumbnail: '/assets/images/CCD-thumb.jpg',
       thumbnailAlt: 'Photo 3',
       description: 'example 3',
       classes: 'art'
     }
   ];
 
+      var featuredProjects = [
+    { 
+      id: '0',
+      title: 'web app /',
+      thumbnail: '/assets/images/carbonTracker-thumb.jpg',
+      thumbnailAlt: 'Photo',
+      description: 'example 1',
+      classes: 'photos art'
+    },
+    { 
+      id: '1',
+      title: 'wordpress theme /',
+      thumbnail: '/assets/images/wp-thumb.jpg',
+      thumbnailAlt: 'Photo 2',
+      description: 'example 2',
+      classes: 'photos'
+    },
+    { 
+      id: '2',
+      title: 'infographic /',
+      thumbnail: '/assets/images/CCD-thumb.jpg',
+      thumbnailAlt: 'Photo 3',
+      description: 'example 3',
+      classes: 'art'
+    }
+  ];
+  
   // -----------------------------
   // Side Nav
   // -----------------------------
@@ -43,7 +70,6 @@ jQuery(function($) {
   $( '#simple-menu' ).sidr({
     side: 'right'
   });
-
 
   // -----------------------------
   // Router
@@ -133,11 +159,7 @@ jQuery(function($) {
 
       // Some page data
       this.model.set({
-        content: '<h1>Home Page</h1>',
-        portfolioItems: [
-        {name: 'Microsoft Project', image: '../images/logo_black.png'},
-        {name: 'Google Project', image: 'someimage.jpg'}
-        ]
+        projects: featuredProjects
       });
 
     },
@@ -328,7 +350,7 @@ jQuery(function($) {
 
       // Some page data
       this.model.set({
-        content: '<h1>Contact Page</h1>'
+        content: '<h1>Contact Me</h1>'
       });
 
     },
@@ -354,7 +376,7 @@ jQuery(function($) {
         var email = $('.email').val();
 
         // Prompt a mailto dialog box with prepoluated data
-        document.location = 'mailto:yourEmail@you.com?subject=' + escape(subject) + '&body=' + escape(text.selection) + '/r/nFrom:' + email;
+        document.location = 'mailto:devries.leah@gmail.com?subject=' + escape(subject) + '&body=' + escape(text.selection) + '/r/nFrom:' + email;
 
       });
 

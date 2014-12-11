@@ -1,149 +1,235 @@
-/* line 7, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
+/* line 8, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
 * {
   box-sizing: border-box; }
 
-/* line 10, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
+/* line 11, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
 body {
   padding: 0;
   margin: 0;
   font-size: 14px;
   font-family: sans-serif;
-  color: #555; }
+  color: #555;
+  max-width: 1280px;
+  margin: 0 auto;
+  font-family: futura; }
 
-/* line 17, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
+/* line 22, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
 a {
   text-decoration: none;
   display: inline-block;
   color: #555; }
 
-/* line 23, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
-div.wrapper {
+/* line 27, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
+h2 {
+  font-family: futura;
+  font-weight: normal; }
+
+/* line 32, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
+.wrapper {
   max-width: 1280px;
   width: 100%;
   margin: 0 auto;
-  background-color: white; }
+  overflow: hidden; }
 
-/* line 29, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
+/* line 38, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
 .header, .main, .footer {
   width: 100%;
   display: block;
   clear: both;
   float: left; }
 
-/* line 36, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
-.header {
+/* line 44, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
+header.header {
   padding: 20px;
   border-bottom: 1px solid #efefef;
   background-size: 100%;
-  background-position: center top;
-  color: #fff; }
+  background-position: center top; }
 
-/* line 43, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
-h1 {
-  float: left; }
-
-/* line 48, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
-header nav {
-  display: block; }
-/* line 51, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
-header .mainNav {
-  margin: 0;
-  padding: 40px 20px;
-  float: right;
-  display: none; }
-  /* line 56, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
-  header .mainNav li {
-    margin: 0;
-    padding: 0;
-    display: inline-block;
-    list-style: none; }
-    /* line 61, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
-    header .mainNav li a {
-      padding: 5px 10px;
-      color: white; }
-    /* line 64, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
-    header .mainNav li a:hover {
-      text-decoration: underline;
-      color: pink; }
-
-/* line 70, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
-div.wrapper div#sidr {
-  display: none;
-  position: absolute;
-  position: fixed;
-  top: 0;
-  right: 0;
-  height: 100%;
-  z-index: 999999;
-  width: 184px;
-  background-color: orange;
-  color: white; }
-  /* line 81, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
-  div.wrapper div#sidr ul {
-    width: 80%;
-    margin: 10%; }
-    /* line 84, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
-    div.wrapper div#sidr ul li {
-      padding: 5px 0;
-      margin: 5px 0;
-      list-style-type: none; }
-
-/* line 91, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
-.main {
-  padding: 20px;
-  border-bottom: 1px solid #efefef; }
-
-/* line 96, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
+/* line 52, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
 .wrapper header {
   padding: 0;
-  height: 300px;
+  height: 350px;
   overflow: hidden;
   position: relative; }
-  /* line 101, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
+  /* line 57, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
   .wrapper header video#bgvid {
     position: absolute;
     width: 100%;
     z-index: -100;
     max-width: 1280px;
     background-position: center bottom; }
-  /* line 107, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
-  .wrapper header img {
-    padding: 20px;
-    float: left; }
+  /* line 63, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
+  .wrapper header nav {
+    float: left;
+    width: 100%; }
+    /* line 66, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
+    .wrapper header nav img {
+      padding: 20px 0 0 20px;
+      float: left; }
+    /* line 69, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
+    .wrapper header nav ul.mainNav {
+      display: none;
+      margin: 0;
+      padding: 40px 20px;
+      float: right; }
+      /* line 74, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
+      .wrapper header nav ul.mainNav li {
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+        list-style: none; }
+        /* line 79, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
+        .wrapper header nav ul.mainNav li a {
+          padding: 5px 10px;
+          color: rgba(255, 255, 255, 0.8);
+          -webkit-font-smoothing: antialiased;
+          -moz-font-smoothing: antialiased;
+          font-smoothing: antialiased; }
+        /* line 85, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
+        .wrapper header nav ul.mainNav li a:hover {
+          text-decoration: underline;
+          color: #308c8b; }
+    /* line 88, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
+    .wrapper header nav div#sidr {
+      display: none;
+      position: absolute;
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100%;
+      z-index: 999999;
+      width: 184px;
+      background-color: #308c8b;
+      color: white; }
+      /* line 99, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
+      .wrapper header nav div#sidr ul {
+        width: 80%;
+        margin: 10%; }
+        /* line 102, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
+        .wrapper header nav div#sidr ul li {
+          padding: 5px 0;
+          margin: 5px 0;
+          list-style-type: none; }
+  /* line 106, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
+  .wrapper header h2 {
+    width: 50%;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.9);
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    overflow: hidden;
+    font-size: 16px;
+    text-align: center;
+    padding-top: 10%; }
 
-/* line 113, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
+/* line 118, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
+.menu {
+  display: inline-block;
+  float: right;
+  width: 30px;
+  height: 30px;
+  margin: 20px; }
+  /* line 124, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
+  .menu span {
+    margin: 0 auto;
+    position: relative;
+    top: 12px;
+    width: 30px;
+    height: 6px;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: block; }
+    /* line 128, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
+    .menu span:before, .menu span:after {
+      position: absolute;
+      content: ''; }
+    /* line 135, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
+    .menu span:before, .menu span:after {
+      width: 30px;
+      height: 6px;
+      background-color: rgba(255, 255, 255, 0.8);
+      display: block; }
+    /* line 140, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
+    .menu span:before {
+      margin-top: -12px; }
+    /* line 142, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
+    .menu span:after {
+      margin-top: 12px; }
+
+/* line 146, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
+.example5 span {
+  -webkit-transition-duration: 0s;
+  -webkit-transition-delay: 0.2s; }
+/* line 149, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
+.example5:hover span {
+  background-color: rgba(0, 0, 0, 0);
+  -webkit-transition-delay: 0.2s; }
+/* line 152, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
+.example5 span:before {
+  -webkit-transition-property: margin, -webkit-transform;
+  -webkit-transition-duration: 0.2s;
+  -webkit-transition-delay: 0.2s, 0; }
+/* line 156, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
+.example5:hover span:before, .example5:active span:before {
+  margin-top: 0;
+  -webkit-transform: rotate(45deg);
+  -webkit-transition-delay: 0, 0.2s; }
+/* line 160, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
+.example5 span:after {
+  -webkit-transition-property: margin, -webkit-transform;
+  -webkit-transition-duration: 0.2s;
+  -webkit-transition-delay: 0.2s, 0; }
+/* line 164, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
+.example5:hover span:after, .example5:active span:before {
+  margin-top: 0;
+  -webkit-transform: rotate(-45deg);
+  -webkit-transition-delay: 0, 0.2s; }
+
+/* line 170, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
+.main {
+  padding: 20px; }
+
+/* line 177, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
+div.aboutWrapper {
+  width: 75%;
+  margin: 0 auto; }
+  /* line 180, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
+  div.aboutWrapper h2 {
+    text-transform: uppercase; }
+
+/* line 184, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
 .isotope-item {
   z-index: 2; }
 
-/* line 116, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
+/* line 187, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
 .isotope-hidden.isotope-item {
   pointer-events: none;
   z-index: 1; }
 
-/* line 121, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
+/* line 192, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
 .isotope, .isotope .isotope-item {
   -webkit-transition-duration: 0.8s;
   -moz-transition-duration: 0.8s;
   transition-duration: 0.8s; }
 
-/* line 126, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
+/* line 197, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
 .isotope {
   -webkit-transition-property: height, width;
   -moz-transition-property: height, width;
   transition-property: height, width; }
 
-/* line 131, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
+/* line 202, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
 .isotope .isotope-item {
   -webkit-transition-property: -webkit-transform, opacity;
   -moz-transition-property: -moz-transform, opacity;
   transition-property: transform, opacity; }
 
-/* line 138, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
+/* line 208, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
 .footer {
   padding: 20px;
   position: fixed;
   bottom: 0; }
-  /* line 143, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
+  /* line 212, /Users/COMPUTES/Desktop/LeahdeVries-SPA/src/assets/styles/index.sass */
   .footer p {
     margin: 0;
     padding: 0;

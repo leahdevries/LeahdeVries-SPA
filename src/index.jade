@@ -23,22 +23,28 @@ html
 
         video#bgvid(autoplay='', loop='', poster='assets/images/logo_black.png')
           source(src='assets/images/test.mp4', type='video/mp4')
-
         nav
           img(src='assets/images/logo_black.png', alt='logo placeholder')
-          a#simple-menu(href='#sidr', style= 'float: right')
-            img(src='assets/images/settingsIcon.png') 
-            
-        ul.mainNav
-          li: a(href="/") Home
+        
+          ul.mainNav
+            li: a(href="/") Home
 
-          li: a(href="/work") Work
+            li /
 
-          li: a(href="/about") About
+            li: a(href="/work") Work
 
-          li: a(href="/contact") Contact
+            li /
 
-      div#sidr
+            li: a(href="/about") About
+
+            li /
+
+            li: a(href="/contact") Contact
+
+          a.menu.example5#simple-menu
+            span
+
+          div#sidr
             ul
               li: a(href="/") Home
 
@@ -47,99 +53,112 @@ html
               li: a(href="/about") About
 
               li: a(href="/contact") Contact
+
+        h2 I am an interactive designer with a background in graphic design &amp; photography who focuses on user experience &amp; visual design.
       div.main
 
       footer.footer
 
         p Copyright &copy; 2014
 
-    // -----------------------------
-    // Home Page Template
-    // -----------------------------
+      // -----------------------------
+      // Home Page Template
+      // -----------------------------
 
-    script#home(type="text/template").
-      <div class="page home">{{{content}}}</div>
-      {{#each portfolioitems}}
-        <p>{{name}}; {{image}}</p>
-      {{/each}}
+      script#home(type="text/template").
+        <section class="page home">
+          {{#each projects}}
+            <div class="project {{{classes}}}">
+              <img src="{{{thumbnail}}}" alt="{{{thumbnailAlt}}}">
+              <h2>{{{title}}}</h2>
+              <a href="/project/{{{id}}}">
+                <p>{{{description}}}</p>
+              </a>
+            </div>
+          {{/each}}
+        </section>
 
-    // -----------------------------
-    // Work Page Template
-    // -----------------------------
+      // -----------------------------
+      // Work Page Template
+      // -----------------------------
 
-    script#work(type="text/template").
-      <ul class="projectCategories">
-        <li><a href="#" data-class="*" class="current">All</a></li>
-        <li><a href="#" data-class=".photos">Photos</a></li>
-        <li><a href="#" data-class=".art">Art</a></li>
-      </ul>
+      script#work(type="text/template").
+        <ul class="projectCategories">
+          <li><a href="#" data-class="*" class="current">All</a></li>
+          <li>/</li>
+          <li><a href="#" data-class=".photos">Photos</a></li>
+          <li>/</li>
+          <li><a href="#" data-class=".art">Art</a></li>
+        </ul>
 
-      <section class="page work">
-        {{#each projects}}
-          <div class="project {{{classes}}}">
-            <h2>{{{title}}}</h2>
-            <img src="{{{thumbnail}}}" alt="{{{thumbnailAlt}}}">
-            <a href="/project/{{{id}}}">
-              <p>{{{description}}}</p>
-            </a>
-          </div>
-        {{/each}}
-      </section>
+        <section class="page work">
+          {{#each projects}}
+            <div class="project {{{classes}}}">
+              <img src="{{{thumbnail}}}" alt="{{{thumbnailAlt}}}">
+              <h2>{{{title}}}</h2>
+              <a href="/project/{{{id}}}">
+                <p>{{{description}}}</p>
+              </a>
+            </div>
+          {{/each}}
+        </section>
 
-    // -----------------------------
-    // About Page Template
-    // -----------------------------
+      // -----------------------------
+      // About Page Template
+      // -----------------------------
 
-    script#about(type="text/template").
-      <div class="page about">{{{content}}}</div>
-      <h2>HI, MY NAME IS LEAH DE VRIES</h2>
-      <p>I’m an interactive designer, based out of Toronto with a background in graphic design &amp; photography. I focus on combining the user experience with creative visual design. I am passionate about solving problems through design &amp; learning about web accessibility. I thrive on continuous learning, I feel that it is the only way to embrace growth and development.</p>
-      <p>When I’m not working on projects, you can find me drawing, taking photos, cruisin’ the streets of Toronto on my bicycle or hanging out with my two furry faced kitty friends, Ron and Crook.</p>
+      script#about(type="text/template").
+        <div class="page about">{{{content}}}</div>
+        <div class="aboutWrapper">
+          <h2>Hi, my name is Leah de Vries</h2>
+          <p>I’m an interactive designer, based out of Toronto with a background in graphic design &amp; photography. I focus on combining the user experience with creative visual design. I am passionate about solving problems through design &amp; learning about web accessibility. I thrive on continuous learning, I feel that it is the only way to embrace growth and development.</p>
+          <p>When I’m not working on projects, you can find me drawing, taking photos, cruisin’ the streets of Toronto on my bicycle or hanging out with my two furry faced kitty friends, Ron and Crook.</p>
+        </div>
 
-    // -----------------------------
-    // Project Page Template
-    // -----------------------------
+      // -----------------------------
+      // Project Page Template
+      // -----------------------------
 
-    script#project(type="text/template").
-      <div class="page">
-        <a href="/work">Back</a>
-        <h2>{{{title}}}</h2>
-        <img src="{{{thumbnail}}}" alt="{{{thumbnailAlt}}}">
-        {{{content}}}
-      </div>
+      script#project(type="text/template").
+        <div class="page">
+          <a href="/work">Back</a>
+          <h2>{{{title}}}</h2>
+          <img src="{{{thumbnail}}}" alt="{{{thumbnailAlt}}}">
+          {{{content}}}
+        </div>
 
-    // -----------------------------
-    // Contact Page Template
-    // -----------------------------
+      // -----------------------------
+      // Contact Page Template
+      // -----------------------------
 
-    script#contact(type="text/template").
-      <div class="page contact">
-        {{{content}}}
-        Email: <input type="text" class="email">
-        Subject: <input type="text" class="subject">
-        Description: <textarea class="text"></textarea>
-        <button class="submit">Send</button>
-      </div>
+      script#contact(type="text/template").
+        <div class="page contact">
+          {{{content}}}
+          Email: <input type="text" class="email">
+          Subject: <input type="text" class="subject">
+          Description: <textarea class="text"></textarea>
+          <button class="submit">Send</button>
+        </div>
 
-    // -----------------------------
-    // Libraries
-    // -----------------------------
+      // -----------------------------
+      // Libraries
+      // -----------------------------
 
-    script(type="text/javascript", src="http://code.jquery.com/jquery-2.1.1.min.js")
+      script(type="text/javascript", src="http://code.jquery.com/jquery-2.1.1.min.js")
 
-    script(type='text/javascript', src="assets/scripts/jquery.sidr.min.js")
+      script(type='text/javascript', src="assets/scripts/jquery.sidr.min.js")
 
-    script(type='text/javascript', src="assets/scripts/jquery.isotope.js")
+      script(type='text/javascript', src="assets/scripts/jquery.isotope.js")
 
-    script(type="text/javascript", src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore.js")
+      script(type="text/javascript", src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore.js")
 
-    script(type="text/javascript", src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone.js")
+      script(type="text/javascript", src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone.js")
 
-    script(type="text/javascript", src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js")
+      script(type="text/javascript", src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js")
 
 
-    // -----------------------------
-    // Application
-    // -----------------------------
+      // -----------------------------
+      // Application
+      // -----------------------------
 
-    script(type="text/javascript", src="assets/scripts/main.js")
+      script(type="text/javascript", src="assets/scripts/main.js")

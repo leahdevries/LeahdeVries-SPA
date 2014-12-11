@@ -6,6 +6,7 @@
 $color: #555
 $lightColor: #efefef
 $darkColor: #333
+$blue: #308c8b
 
 // -----------------------------
 // Global Styles
@@ -19,21 +20,29 @@ body
   font-size: 14px
   font-family: sans-serif
   color: $color
+  max-width: 1280px;
+  margin: 0 auto;
+  font-family: futura;
+
 
 a
   text-decoration: none
   display: inline-block
   color: $color
 
+h2
+  font-family: futura
+  font-weight: normal
 
 // -----------------------------
 // App Specific
 // -----------------------------
-div.wrapper
+
+.wrapper
   max-width: 1280px
   width: 100%
   margin: 0 auto
-  background-color: white
+  overflow: hidden;
 
 .header, .main, .footer
   width: 100%
@@ -41,86 +50,20 @@ div.wrapper
   clear: both
   float: left
 
-// -----------------------------
-// Header
-// -----------------------------
-
-.header
+header.header
   padding: 20px
   border-bottom: 1px solid $lightColor
-  // background: url('../images/hero.jpg') no-repeat
   background-size: 100%
   background-position: center top
-  color: #fff
-
-h1
-  float: left
 
 // -----------------------------
-// Navigation
-// -----------------------------
-  
-header
-  nav
-    display: block
+// HEADER Specific
+// ----------------------------- 
 
-  .mainNav
-    margin: 0
-    padding: 40px 20px
-    float: right
-    display: none
-    li
-      margin: 0
-      padding: 0
-      display: inline-block
-      list-style: none
-      a
-        padding: 5px 10px
-        color: white
-      a:hover
-        text-decoration: underline
-        color: pink
-
-// -----------------------------
-// Pop out Navigation
-// -----------------------------
-
-div.wrapper
-  div#sidr
-    display: none
-    position: absolute
-    position: fixed
-    top: 0
-    right: 0
-    height: 100%
-    z-index: 999999
-    width: 184px
-    background-color: orange
-    color: rgba(255,255,255,1)
-    ul
-      width: 80%
-      margin:10%
-      li
-        padding: 5px 0
-        margin: 5px 0
-        list-style-type: none
-
-
-// -----------------------------
-// Main
-// -----------------------------
-
-.main
-  padding: 20px
-  border-bottom: 1px solid $lightColor
-
-// -----------------------------
-// HOME
-// -----------------------------
 .wrapper
   header
     padding: 0
-    height: 300px
+    height: 350px
     overflow: hidden
     position: relative
     video#bgvid
@@ -129,20 +72,167 @@ div.wrapper
       z-index: -100
       max-width: 1280px
       background-position: center bottom
-      // position: fixed
-      // left: 0
-      // top: 0
-      // min-width: 100%
-      // min-height: 100%
-      // width: auto
-      // height: auto
-      // z-index: -100
-      // background: url('../images/logo_black.png') no-repeat
-      // background-size: center
-    img 
-      padding: 20px
-      float: left
+    nav
+      float: left;
+      width: 100%;
+      img 
+        padding: 20px 0 0 20px
+        float: left
+      ul.mainNav
+        display: none
+        margin: 0
+        padding: 40px 20px
+        float: right
+        li
+          margin: 0
+          padding: 0
+          display: inline-block
+          list-style: none
+          a
+            padding: 5px 10px
+            color: rgba(255,255,255,0.8)
+            -webkit-font-smoothing: antialiased
+            -moz-font-smoothing: antialiased
+            font-smoothing: antialiased
+          a:hover
+            text-decoration: underline
+            color: $blue
+      div#sidr
+        display: none
+        position: absolute
+        position: fixed
+        top: 0
+        right: 0
+        height: 100%
+        z-index: 999999
+        width: 184px
+        background-color: $blue
+        color: rgba(255,255,255,1)
+        ul
+          width: 80%
+          margin:10%
+          li
+            padding: 5px 0
+            margin: 5px 0
+            list-style-type: none
+    h2
+      width: 50%
+      margin: 0 auto
+      color: rgba(255,255,255,0.9)
+      -webkit-font-smoothing: antialiased
+      -moz-font-smoothing: antialiased
+      font-smoothing: antialiased
+      overflow: hidden
+      font-size: 16px
+      text-align: center
+      padding-top: 10%
 
+// -----------------------------
+// Hamburger X Menu
+// -----------------------------
+.menu
+  // position: relative
+  display: inline-block
+  // display: none
+  float: right
+  width: 30px
+  height: 30px
+  margin: 20px
+  span
+    margin: 0 auto
+    position: relative
+    top: 12px
+    &:before, &:after
+      position: absolute
+      content: ''
+    width: 30px
+    height: 6px
+    // background-color: $blue
+    background-color: rgba(255,255,255,0.8)
+    display: block
+    &:before, &:after
+      width: 30px
+      height: 6px
+      // background-color: $blue
+      background-color: rgba(255,255,255,0.8)
+      display: block
+    &:before
+      margin-top: -12px
+    &:after
+      margin-top: 12px
+
+// -----------------------------
+// Animated X
+// -----------------------------
+.example5
+  span
+    -webkit-transition-duration: 0s
+    -webkit-transition-delay: .2s
+  &:hover span
+    background-color: rgba(0, 0, 0, 0)
+    -webkit-transition-delay: .2s
+  span:before
+    -webkit-transition-property: margin, -webkit-transform
+    -webkit-transition-duration: .2s
+    -webkit-transition-delay: .2s, 0
+  &:hover span:before, &:active span:before
+    margin-top: 0
+    -webkit-transform: rotate(45deg)
+    -webkit-transition-delay: 0, .2s
+  span:after
+    -webkit-transition-property: margin, -webkit-transform
+    -webkit-transition-duration: .2s
+    -webkit-transition-delay: .2s, 0
+  &:hover span:after, &:active span:before
+    margin-top: 0
+    -webkit-transform: rotate(-45deg)
+    -webkit-transition-delay: 0, .2s
+
+// -----------------------------
+// Main
+// -----------------------------
+
+.main
+  padding: 20px
+
+// -----------------------------
+// HOME
+// -----------------------------
+
+// section.home
+//   h2
+//     font-size: 14px
+//   div.project 
+//     float: left
+
+// -----------------------------
+// WORK
+// -----------------------------
+// section.work
+//   ul.projectCategories
+//     list-style-type: none
+//     font-size: 1.2em
+//     -webkit-font-smoothing: antialiased
+//     -moz-font-smoothing: antialiased
+//     font-smoothing: antialiased
+//     li
+//       display: inline-block
+//       &:hover a
+//         color: $blue
+//         text-decoration: underline
+//   section.work 
+//     div.project 
+//       float: left
+
+// -----------------------------
+// ABOUT
+// -----------------------------
+
+div.aboutWrapper
+    width: 75%
+    margin: 0 auto
+    h2
+      text-transform: uppercase
 
 // -----------------------------
 // Work / Isotope Specific CSS
@@ -152,7 +242,7 @@ div.wrapper
   z-index: 2
 
 .isotope-hidden.isotope-item 
-  pointer-events: none;
+  pointer-events: none
   z-index: 1
 
 .isotope,
@@ -171,7 +261,6 @@ div.wrapper
   -moz-transition-property: -moz-transform, opacity
   transition-property: transform, opacity
 
-
 // -----------------------------
 // Footer
 // -----------------------------
@@ -180,7 +269,6 @@ div.wrapper
   padding: 20px
   position: fixed
   bottom: 0
-
   p
     margin: 0
     padding: 0
